@@ -1,3 +1,8 @@
+# custom
+PaddleGAN
+data
+Wav2Lip
+first-order-model
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]
