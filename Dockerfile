@@ -1,7 +1,9 @@
 FROM nvidia/cuda:10.2-cudnn7-runtime-ubuntu18.04
 
-RUN DEBIAN_FRONTEND=noninteractive apt-get -qq update && \
-    DEBIAN_FRONTEND=noninteractive apt-get -qqy install python3-pip ffmpeg git less nano libsm6 libxext6 libxrender-dev && \
+ADD pip.conf /root/.pip/pip.conf
+
+RUN DEBIAN_FRONTEND=noninteractive apt-get update -qq && \
+    DEBIAN_FRONTEND=noninteractive apt-get install -qqy python3-pip git less vim && \
     rm -rf /var/lib/apt/lists/*
 
 COPY . /app/
