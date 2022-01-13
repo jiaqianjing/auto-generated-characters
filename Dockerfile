@@ -8,7 +8,8 @@ RUN DEBIAN_FRONTEND=noninteractive apt-get update -qq && \
 
 # install ffmpeg
 RUN wget https://johnvansickle.com/ffmpeg/releases/ffmpeg-release-amd64-static.tar.xz && \
-    tar xf ffmpeg-release-amd64-static.tar.xz -C /usr/local/
+    tar xf ffmpeg-release-amd64-static.tar.xz -C /usr/local/ && \
+    rm -rf ffmpeg-release-amd64-static.tar.xz
 ENV PATH=/usr/local/ffmpeg-4.4.1-amd64-static:$PATH
 ENV LANG=C.UTF-8
 
